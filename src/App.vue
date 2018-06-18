@@ -19,20 +19,51 @@
         </div>
       </div>
     </div>
-    <ProfessionalProjects />
-    <SideProjects />
+    <Projects
+      title="Professional Profile"
+      :projects="professionalProjects"
+    />
+    <Projects
+      title="Side Projects"
+      :projects="professionalProjects"
+    />
   </div>
 </template>
 
 <script>
-import ProfessionalProjects from './components/ProfessionalProjects';
-import SideProjects from './components/SideProjects';
+import Projects from './components/Projects';
 
 export default {
   name: 'App',
   components: {
-    ProfessionalProjects,
-    SideProjects,
+    Projects,
+  },
+  data() {
+    return {
+      professionalProjects: [
+        {
+          link: "www.reddit.com",
+          screenshotUrl: "url",
+          title: "Carta",
+          caption: "Full-stack software engineer",
+          tools: "Python | Django",
+        },
+        {
+          link: "www.reddit.com",
+          screenshotUrl: "url",
+          title: "Carta",
+          caption: "Full-stack software engineer",
+          tools: "Python | Django",
+        },
+        {
+          link: "www.reddit.com",
+          screenshotUrl: "url",
+          title: "Carta",
+          caption: "Full-stack software engineer",
+          tools: "Python | Django",
+        },
+      ],
+    }
   },
 };
 </script>
@@ -48,15 +79,9 @@ export default {
   }
   .cover {
     position: relative;
-    height: 360px;
     overflow: hidden;
   }
   .bio {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     padding-top: 30px;
     border-bottom: 2px solid #aaa;
     padding: 30px;
@@ -78,10 +103,5 @@ export default {
   }
   .container {
     width: 1000px;
-  }
-  .video {
-    min-width: 100%;
-    object-fit: contain;
-    max-height: 500px;
   }
 </style>
